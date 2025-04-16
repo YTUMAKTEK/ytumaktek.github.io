@@ -6,6 +6,10 @@
 @media (max-width: 767px) {
 	.navbar-inverse {  background:rgba(0,0,0,.9); }
 }
+.contact-page .navbar-inverse .navbar-nav{
+	margin-top: -400px;
+
+}
 .navbar-nav{
 	margin-top: 650px;
 	margin-right: 300px;
@@ -25,7 +29,7 @@
 
 .navbar-inverse .navbar-nav > .active > a { background:none; color:white; }
 
-.navbar-inverse .navbar-brand { font-family: "Open sans", helvetica, arial; font-size: 24px; color:white; padding:0 0 0 15px; margin-top:-160px;   }
+.navbar-inverse .navbar-brand { font-family: "Open sans", helvetica, arial; font-size: 24px; color:white; padding:0 0 0 15px; margin-top:-400px;   }
 	.navbar-inverse .navbar-brand img { margin-left:-950px; transform: scale(0.2); }
 
 .navbar-nav .dropdown-menu {
