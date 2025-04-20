@@ -421,7 +421,7 @@ img.pull-left {
 /* carousel */
 #quote-carousel {
 	padding: 0 10px 30px 10px;
-	margin-top: 30px 0px 0px;
+	margin-top: -300px;
 }
 /* Control buttons  */
 #quote-carousel .carousel-control {
@@ -619,7 +619,6 @@ position: relative;
 }
 .navbar-collapse{
 	background:rgba(0,0,0,0.80)	;
-	margin-top: 200px;
 
 	}
 }
