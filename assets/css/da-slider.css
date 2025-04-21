@@ -1,15 +1,15 @@
 .da-slider {
 	width: 100%;
-	min-width: 520px;
-	height: 420px;
-	position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-	background: transparent url(../images/waves.gif) repeat 0% 0%;
+    max-width: 960px;
+    height: 420px;
+    position: relative;
+    top: 0;
+    left: 0 ;
+    overflow: hidden;
+	/*background: transparent url(../images/waves.gif) repeat 0% 0%;
 	border-top: 8px solid #efc34a;
 	border-bottom: 8px solid #efc34a;
-	box-shadow: 0px 1px 1px rgba(0,0,0,0.2), 0px -2px 1px #fff;
+	box-shadow: 0px 1px 1px rgba(0,0,0,0.2), 0px -2px 1px #fff;*/ 
 	-webkit-transition: background-position 1s ease-out 0.3s;
 	-moz-transition: background-position 1s ease-out 0.3s;
 	-o-transition: background-position 1s ease-out 0.3s;
@@ -47,7 +47,7 @@
 	opacity: 1;
 }
 .da-slide h2 {
-	color: #fff;
+	color: white;
 	font-size: 54px;
 	width: 80%;
 	top: 0px;
@@ -60,7 +60,7 @@
 .da-slide p {
 	width: 80%;
 	top: 115px;
-	color: #fff;
+	color: white;
 	font-size: 24px;
 	line-height: 26px;
 	height: 80px;
@@ -126,19 +126,20 @@
 }
 .da-arrows span {
 	position: absolute;
-	top: 20%;
-	height: 30px;
-	width: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 40px;
+    width: 40px;
 	border-radius: 50%;
 	cursor: pointer;
 	z-index: 2000;
 	opacity: 0;
 	background: transparent;
-	-webkit-transition: opacity 0.4s ease-in-out-out 0.2s;
-	-moz-transition: opacity 0.4s ease-in-out-out 0.2s;
-	-o-transition: opacity 0.4s ease-in-out-out 0.2s;
-	-ms-transition: opacity 0.4s ease-in-out-out 0.2s;
-	transition: opacity 0.4s ease-in-out-out 0.2s;
+	-webkit-transition: opacity 0.4s ease-in-out 0.2s;
+	-moz-transition: opacity 0.4s ease-in-out 0.2s;
+	-o-transition: opacity 0.4s ease-in-out 0.2s;
+	-ms-transition: opacity 0.4s ease-in-out 0.2s;
+	transition: opacity 0.4s ease-in-out 0.2s;
 }
 .da-slider:hover .da-arrows span {
 	opacity: 1;
