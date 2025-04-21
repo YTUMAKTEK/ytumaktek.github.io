@@ -14,9 +14,7 @@
 	margin-top: -220px;
 	margin-right: 300px;
 }
-.navbar-nav > li:first-child > a {
-	margin-left: 100px;
-  }
+
   
 .navbar-inverse .navbar-nav > li > a,
 .navbar-inverse .navbar-nav > .open ul > a { color:rgba(255, 255, 255, .4); }
