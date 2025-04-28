@@ -30,7 +30,7 @@
       <a class="navbar-brand" href="index.html"><img  src="assets/images/logo2.png" alt="vOne HTML5 template"></a> </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav pull-right center-nav">
-        <li class="active"><a href="#" >Home</a></li>
+        <li class="active"><a href="index.html" >Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
@@ -51,7 +51,7 @@
 <!-- /.navbar --> 
 
 <!-- Header -->
-<header id="head">
+<header id="head" >
   <div class="container">
     <div class="banner-content">
       <div id="da-slider" class="da-slider">
@@ -95,9 +95,7 @@
                     <span>Welcome to vOne!</span>
                     <p>Nullam ac rhoncus sapien, non gravida purus. Alinon elit imperdiet congue. Integer ultricies sed elit imperdiet congue. Integer ultricies sed ligula eget tempus.</p>
                 </div>            
-                <div class="col-md-3 btn-download">
-                    <a href="#" class="btn-u btn-u-lg"><i class="fa fa-cloud-download"></i> Download Now</a>
-                </div>
+                
             </div>
             </div>
 </section>
@@ -262,9 +260,22 @@
 <script src="assets/js/custom.js"></script>
 <!-- jQuery (Bootstrap JS'den önce gelmeli) -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(function () {
+    $('.navbar-collapse a:not(.dropdown-toggle)').on('click', function (e) {
+      // Başa sarma gibi davranışı engelle
+      if ($(this).attr('href') === '#') {
+        e.preventDefault(); // sayfayı yenilemesini engelle
+      }
 
-<!-- Bootstrap JS -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      // Mobil görünümse collapse'ı kapat
+      if ($(window).width() < 768) {
+        $('.navbar-collapse').collapse('hide');
+      }
+    });
+  });
+</script>
+
 
 </body>
 </html>

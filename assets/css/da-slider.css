@@ -16,6 +16,11 @@
 	-ms-transition: background-position 1s ease-out 0.3s;
 	transition: background-position 1s ease-out 0.3s;
 }
+@media (max-width: 768px){
+	.da-slider {
+		margin-top: -800px;
+	}
+}
 .da-slide {
 	position: absolute;
 	width: 100%;

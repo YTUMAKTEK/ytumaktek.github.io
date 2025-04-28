@@ -62,9 +62,10 @@
 		left: 0;
 		width: 100%;
 		background: rgba(0, 0, 0, 0.9); /* siyah arka plan */
-		z-index: 9999;
+		
 	  }
-	
+
+
 .navbar-nav {
 		display: flex;
 		flex-direction: column;
