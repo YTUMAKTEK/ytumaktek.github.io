@@ -126,8 +126,8 @@ background: #35374b;
 /* Header */
 #head {
 	position: relative;
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 100%;
 	background: url('../images/bg_header1.jpg') no-repeat center center;
 	background-size: cover;
 	overflow: hidden;
@@ -590,8 +590,8 @@ nav#filter a.current {
 	padding-top: 20%;
 	height: 100%;
 	transition: all 200ms ease-in-out 0s;
-	opacity: 1;
-	background: rgba(244, 185, 5, 0.72);
+	opacity: 0.7;
+	background-color: #de172e;
 }
 .isotope-item {
 	margin-bottom: 25px;
@@ -602,10 +602,12 @@ nav#filter a.current {
 	color: #fff;
 	text-align: center;
 	display: block;
+	
 }
 .portfolio-item .portfolio-desc a:hover {
 	/*text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.7);*/
 	text-decoration: none;
+	opacity: q;
 }
 .portfolio-item .portfolio-desc .folio-info {
 	top: -20px;
