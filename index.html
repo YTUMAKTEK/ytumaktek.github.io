@@ -28,8 +28,8 @@
       <!-- Button for smallest screens -->
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
       <a class="navbar-brand" href="index.html"><img  src="assets/images/logo2.png" alt="vOne HTML5 template"></a> </div>
-    <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav pull-right center-nav">
+    <div class="navbar-collapse collapse" >
+      <ul class="nav navbar-nav center-nav">
         
         <li class="dropdown active"> <a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Anasayfa<b class="caret"></b></a>
           <ul class="dropdown-menu">
@@ -291,22 +291,45 @@
 <script src="assets/js/custom.js"></script>
 <!-- jQuery (Bootstrap JS'den önce gelmeli) -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script>
-  $(function () {
-    $('.navbar-collapse a:not(.dropdown-toggle)').on('click', function (e) {
-      // Başa sarma gibi davranışı engelle
-      if ($(this).attr('href') === '#') {
-        e.preventDefault(); // sayfayı yenilemesini engelle
-      }
+    document.addEventListener('DOMContentLoaded', function() {
+        const headElement = document.getElementById('head');
 
-      // Mobil görünümse collapse'ı kapat
-      if ($(window).width() < 768) {
-        $('.navbar-collapse').collapse('hide');
-      }
+        if (headElement) {
+            // #head elementinin background-image URL'sini alın
+            const style = window.getComputedStyle(headElement);
+            let bgImage = style.backgroundImage;
+
+            // URL'yi temizle (url("...") formatından sadece URL'yi al)
+            const urlMatch = bgImage.match(/url\(['"]?(.*?)['"]?\)/);
+            if (urlMatch && urlMatch[1]) {
+                const imageUrl = urlMatch[1];
+                const img = new Image();
+
+                img.onload = function() {
+                    const backgroundImageHeight = img.naturalHeight;
+                    // Kök HTML elemanına (veya #head'e) CSS değişkenini ayarla
+                    // document.documentElement.style.setProperty('--head-before-height', `${backgroundImageHeight}px`);
+                    headElement.style.setProperty('--head-before-height', `${backgroundImageHeight}px`);
+                    console.log('Arka plan görseli yüksekliği ayarlandı:', backgroundImageHeight + 'px');
+                };
+
+                img.onerror = function() {
+                    console.error("Arka plan görseli yüklenemedi veya URL hatalı:", imageUrl);
+                };
+
+                // Görselin yüklenmesini tetikle
+                img.src = imageUrl;
+
+            } else {
+                console.warn("#head elementinde geçerli bir arka plan görseli URL'si bulunamadı.");
+            }
+        } else {
+            console.warn("#head elementi bulunamadı.");
+        }
     });
-  });
 </script>
-
 
 </body>
 </html>

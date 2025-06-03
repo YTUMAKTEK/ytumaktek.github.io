@@ -12,7 +12,7 @@ Licence: Creative Commons Attribution 3.0** - http://creativecommons.org/license
 	height: 100vh;             /* tam ekran yüksekliği */
   }
   
-
+  
 /*General*/
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Open sans", Helvetica, Arial;
@@ -150,7 +150,7 @@ background: #35374b;
   }
   @media (max-width: 768px){
 	#head::before{
-		height: 585px;
+		height: var(--head-before-height); 
 	}
   }
   
@@ -174,7 +174,8 @@ background: #35374b;
 }
 @media (max-width: 768px){
 	#head::after{
-		height: 585px;
+		height: var(--head-before-height); 
+
 	}
 }
   
@@ -676,7 +677,7 @@ position: relative;
 @media (max-width: 768px) {
 /* Make the indicators larger for easier clicking with fingers/thumb on mobile */    
 #quote-carousel .carousel-indicators {
-	bottom: -20px !important;
+	bottom:50px !important;
 }
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
 	border-color: #101010;

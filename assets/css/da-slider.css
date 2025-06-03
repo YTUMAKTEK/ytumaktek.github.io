@@ -1,10 +1,11 @@
 .da-slider {
 	width: 100%;
     max-width: 960px;
-    height: 420px;
+    height: 100%;
     position: relative;
     top: 0;
     left: 0 ;
+	z-index: 999px;
     overflow: hidden;
 	/*background: transparent url(../images/waves.gif) repeat 0% 0%;
 	border-top: 8px solid #efc34a;
@@ -18,7 +19,9 @@
 }
 @media (max-width: 768px){
 	.da-slider {
-		margin-top: -800px;
+		margin-top:0;
+		transform: scale(0.8);
+		width: 100%;
 	}
 }
 .da-slide {
@@ -105,6 +108,11 @@
 	z-index: 2000;
 	-moz-user-select: none;
 	-webkit-user-select: none;
+}
+@media(max-width:768px){
+	.da-dots{
+		bottom: 0;
+	}
 }
 .da-dots span {
 	display: inline-block;
@@ -1240,15 +1248,3 @@ opacity: 0;
 }
 }
 
-@media (min-width: 768px) {
-}
-
-@media (max-width: 768px) {
-.da-slider {
-	width: 100%;
-	min-width: initial;
-}
-}
-
-@media (max-width: 480px) {
-}
