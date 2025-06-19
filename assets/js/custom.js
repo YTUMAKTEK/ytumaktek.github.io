@@ -18,6 +18,12 @@ jQuery(document).ready(function ($) {
 	});
 // fancybox
     $(".fancybox").fancybox();
+
+// Navbar collapse on mobile
+$('.navbar-inverse').on('click', 'li a', function () {
+    $('.navbar-collapse').collapse('hide');
+});
+
 //isotope
     if ($('.isotopeWrapper').length) {
         var $container = $('.isotopeWrapper');
@@ -35,9 +41,6 @@ jQuery(document).ready(function ($) {
                 scrollTop: 0
             }, "slow");
             return false;
-        });
-        $('.navbar-inverse').on('click', 'li a', function () {
-            $('.navbar-inverse .in').addClass('collapse').removeClass('in').css('height', '1px');
         });
         $('#filter a').click(function () {
             $('#filter a').removeClass('current');
