@@ -17,7 +17,40 @@ jQuery(document).ready(function ($) {
 		interval: 4000,
 	});
 // fancybox
-    $(".fancybox").fancybox();
+    $(".fancybox").fancybox({
+        closeBtn: true,
+        closeClick: 'overlay',
+        helpers: {
+            overlay: {
+                locked: false
+            }
+        },
+        beforeShow: function() {
+            // Ensure close button is visible and clickable
+            setTimeout(function() {
+                $('.fancybox-close').css({
+                    'z-index': '100000',
+                    'opacity': '1',
+                    'visibility': 'visible',
+                    'cursor': 'pointer'
+                });
+            }, 100);
+        },
+        onComplete: function() {
+            // Remove any filters from the opened image
+            setTimeout(function() {
+                $('.fancybox-opened img').css({
+                    'filter': 'none',
+                    '-webkit-filter': 'none',
+                    'z-index': '100001'
+                });
+                $('.fancybox-wrap, .fancybox-skin, .fancybox-inner').css({
+                    'filter': 'none',
+                    '-webkit-filter': 'none'
+                });
+            }, 200);
+        }
+    });
 
 // Navbar collapse on mobile
 $('.navbar-inverse').on('click', 'li a', function () {

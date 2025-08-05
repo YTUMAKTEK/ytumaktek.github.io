@@ -8,11 +8,47 @@ Licence: Creative Commons Attribution 3.0** - http://creativecommons.org/license
 .banner-content {
 	display: flex;
 	justify-content: center;   /* yatay ortalama */
-	align-items: center;       /* dikey ortalama */
-	height: 100vh;             /* tam ekran yüksekliği */
+	align-items: flex-start;       /* dikey ortalama */
+	height: 100vh;         
+	width: 100%; 
+	padding-top: 25vw;   /* tam ekran yüksekliği */
   }
-  
-  
+
+/* Move slider arrows higher */
+#head .da-arrows {
+	position: absolute;
+	top: 20% !important;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+}
+
+#head .da-arrows span {
+	position: absolute;
+	top: 0 !important;
+	transform: translateY(-50%);
+}
+
+/* Fix photo modal/lightbox z-index and close button */
+.fancybox-overlay,
+.fancybox-wrap,
+.fancybox-skin,
+.fancybox-opened {
+	z-index: 99999 !important;
+}
+
+.fancybox-close {
+	z-index: 100000 !important;
+	cursor: pointer !important;
+	opacity: 1 !important;
+	visibility: visible !important;
+}
+
+.fancybox-close:hover {
+	opacity: 1 !important;
+}
+
+	 
 /*General*/
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Open sans", Helvetica, Arial;
@@ -127,6 +163,7 @@ background: #35374b;
 #head {
 	position: relative;
 	width: 100%;
+	
 	height: 100vh; /* This makes it exactly one screen height */
 	background: linear-gradient(to right,
 		rgba(0, 0, 0, 0.7) 0%,
